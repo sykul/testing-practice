@@ -45,9 +45,19 @@ test('calculator can multiply', () => {
 })
 
 test('calculator can multiply with strings', () => {
-    expect(calc.multiply(12, 5)).toEqual(60)
+    expect(calc.multiply('12', 5)).toEqual(60)
 })
 
 test('calculator can divide', () => {
-    expect().toEqual()
+    expect(calc.divide(6, 2)).toEqual(3)
 })
+
+test('calculator can divide with decimal quotient', () => {
+    expect(calc.divide(6, 4)).toEqual(1.5);
+})
+
+test('divide by zero throws error', () => {
+    expect(() => {
+        calc.divide(50, 0);
+    }).toThrow("Can't divide by zero");
+});

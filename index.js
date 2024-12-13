@@ -24,7 +24,10 @@ class Calculator {
     }
 
     divide(num1, num2) {
-
+        if (Number(num2) === 0) {
+            throw new Error("Can't divide by zero");
+        }
+        return Number(num1) / Number(num2);
     }
 }
 
