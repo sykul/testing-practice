@@ -33,4 +33,9 @@ class Calculator {
 
 const calc = new Calculator();
 
-export { capitalise, reverseString, calc }
+
+function caesarCipher(str, shiftFactor) {
+    return;
+}
+
+export { capitalise, reverseString, calc, caesarCipher }

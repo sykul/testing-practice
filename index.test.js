@@ -1,5 +1,7 @@
 import { capitalise, reverseString, calc } from "."
 
+
+/* Calculator */
 test('first letter is capital', () => {
     expect(capitalise('tadsfasdf')).toEqual('Tadsfasdf')
 })
@@ -61,3 +63,11 @@ test('divide by zero throws error', () => {
         calc.divide(50, 0);
     }).toThrow("Can't divide by zero");
 });
+
+/* Caesar cipher */
+
+test('shift simple string', () => {
+    expect(() => {
+        caesarCipher('abc', 3).toEqual('def')
+    })
+})
