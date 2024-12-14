@@ -1,4 +1,4 @@
-import { capitalise, reverseString, calc } from "."
+import { capitalise, reverseString, calc, caesarCipher } from "./index.js"
 
 
 /* Calculator */
@@ -67,7 +67,5 @@ test('divide by zero throws error', () => {
 /* Caesar cipher */
 
 test('shift simple string', () => {
-    expect(() => {
-        caesarCipher('abc', 3).toEqual('def')
-    })
+    expect(caesarCipher('abc', 3)).toBe('def')
 })

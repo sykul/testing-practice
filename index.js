@@ -35,7 +35,18 @@ const calc = new Calculator();
 
 
 function caesarCipher(str, shiftFactor) {
-    return;
+    let letterArray = str.split('');
+    let newWordArray = letterArray.map((letter) => {
+        const charCode = letter.charCodeAt(0);
+        const newLetter = String.fromCharCode(charCode + 3)
+        return newLetter;
+    });
+
+    let newWord = newWordArray.reduce((acc, current) => {
+        return acc += current;
+    }, "")
+
+    return newWord;
 }
 
 export { capitalise, reverseString, calc, caesarCipher }
