@@ -85,3 +85,45 @@ test('loop around alphabet if shiftfactor > 26', () => {
 test('loop around alphabet if shiftfactor > 26 near end of alphabet', () => {
     expect(caesarCipher('wxy', 29)).toBe('zab')
 })
+
+/* capitals */ 
+test('shift simple string with a capital', () => {
+    expect(caesarCipher('aBc', 3)).toBe('dEf')
+})
+
+test('test shouldn\'t pass with different shift factor', () => {
+    expect(caesarCipher('aBc', 15)).not.toEqual('dEf')
+})
+
+test('shift string at end of alphabet with capitals', () => {
+    expect(caesarCipher('XyZ', 3)).toBe('AbC')
+})
+
+test('loop around alphabet if shiftfactor > 26, with capitals', () => {
+    expect(caesarCipher('ABc', 27)).toBe('BCd')
+})
+
+test('loop around alphabet if shiftfactor > 26 near end of alphabet, with capitals', () => {
+    expect(caesarCipher('WXy', 29)).toBe('ZAb')
+})
+
+/* capitals and punctuation */
+test('shift simple string with a capital and punctuation', () => {
+    expect(caesarCipher('a,Bc', 3)).toBe('d,Ef')
+})
+
+test('test shouldn\'t pass with different shift factor', () => {
+    expect(caesarCipher('aB c-', 15)).not.toEqual('dE f-')
+})
+
+test('shift string at end of alphabet with capitals and punctuation', () => {
+    expect(caesarCipher('X yZ-', 3)).toBe('A bC-')
+})
+
+test('loop around alphabet if shiftfactor > 26, with capitals and punctuation', () => {
+    expect(caesarCipher('_ _A&Bc', 27)).toBe('_ _B&Cd')
+})
+
+test('loop around alphabet if shiftfactor > 26 near end of alphabet, with capitals and punctuation', () => {
+    expect(caesarCipher('W¬X~y', 29)).toBe('Z¬A~b')
+})

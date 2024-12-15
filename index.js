@@ -41,6 +41,8 @@ function caesarCipher(str, shiftFactor) {
         let newLetter = '';
         if (96 < charCode && charCode < 123) {
             newLetter = String.fromCharCode((charCode + shiftFactor - 97) % 26 + 97)
+        } else if (64 < charCode && charCode < 91) {
+            newLetter = String.fromCharCode((charCode + shiftFactor - 65) % 26 + 65)
         } else {
             newLetter = String.fromCharCode(charCode)
         }
