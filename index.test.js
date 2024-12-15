@@ -69,3 +69,19 @@ test('divide by zero throws error', () => {
 test('shift simple string', () => {
     expect(caesarCipher('abc', 3)).toBe('def')
 })
+
+test('test shouldn\'t pass with different shift factor', () => {
+    expect(caesarCipher('abc', 15)).not.toEqual('def')
+})
+
+test('shift string at end of alphabet', () => {
+    expect(caesarCipher('xyz', 3)).toBe('abc')
+})
+
+test('loop around alphabet if shiftfactor > 26', () => {
+    expect(caesarCipher('abc', 27)).toBe('bcd')
+})
+
+test('loop around alphabet if shiftfactor > 26 near end of alphabet', () => {
+    expect(caesarCipher('wxy', 29)).toBe('zab')
+})

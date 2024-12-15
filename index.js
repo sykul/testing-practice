@@ -38,7 +38,13 @@ function caesarCipher(str, shiftFactor) {
     let letterArray = str.split('');
     let newWordArray = letterArray.map((letter) => {
         const charCode = letter.charCodeAt(0);
-        const newLetter = String.fromCharCode(charCode + 3)
+        let newLetter = '';
+        if (96 < charCode && charCode < 123) {
+            newLetter = String.fromCharCode((charCode + shiftFactor - 97) % 26 + 97)
+        } else {
+            newLetter = String.fromCharCode(charCode)
+        }
+        
         return newLetter;
     });
 
