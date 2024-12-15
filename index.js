@@ -58,6 +58,9 @@ function caesarCipher(str, shiftFactor) {
 }
 
 function analyseArray(arr) {
+    if (arr.length === 0) {
+        return {average: undefined, min: undefined, max: undefined, length: 0}
+    }
     const length = arr.length;
     const sum = arr.reduce((acc, number) => {
         return acc += number;

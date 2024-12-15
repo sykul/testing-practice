@@ -149,3 +149,16 @@ test('analyse an array with negative numbers', () => {
 test('round average to 2dp', () => {
     expect(analyseArray([1,-2,3])).toEqual({average: 0.67, min: -2, max: 3, length: 3})
 })
+
+test('round min to 2dp', () => {
+    expect(analyseArray([3.334,-3.334,4,2])).toEqual({average: 1.5, min: -3.33, max: 4, length: 4})
+})
+
+test('round max to 2dp', () => {
+    expect(analyseArray([1,-2,3])).toEqual({average: 0.67, min: -2, max: 3, length: 3})
+})
+
+test('array analysis works with empty array', () => {
+    expect(analyseArray([])).toEqual({average: undefined, min: undefined, max: undefined, length: 0})
+})
+
