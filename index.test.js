@@ -1,4 +1,4 @@
-import { capitalise, reverseString, calc, caesarCipher } from "./index.js"
+import { capitalise, reverseString, calc, caesarCipher, analyseArray } from "./index.js"
 
 
 /* Calculator */
@@ -126,4 +126,26 @@ test('loop around alphabet if shiftfactor > 26, with capitals and punctuation', 
 
 test('loop around alphabet if shiftfactor > 26 near end of alphabet, with capitals and punctuation', () => {
     expect(caesarCipher('W¬X~y', 29)).toBe('Z¬A~b')
+})
+
+test('test string from Odin', () => {
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+})
+
+/*  */
+
+test('analyse array of numbers', () => {
+    expect(analyseArray([1,8,3,4,2,6])).toEqual({average: 4, min: 1, max: 8, length: 6})
+})
+
+test('analyse a different array of numbers', () => {
+    expect(analyseArray([1,2,3])).toEqual({average: 2, min: 1, max: 3, length: 3})
+})
+
+test('analyse an array with negative numbers', () => {
+    expect(analyseArray([1,-4,3])).toEqual({average: 0, min: -4, max: 3, length: 3})
+})
+
+test('round average to 2dp', () => {
+    expect(analyseArray([1,-2,3])).toEqual({average: 0.67, min: -2, max: 3, length: 3})
 })

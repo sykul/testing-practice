@@ -57,4 +57,22 @@ function caesarCipher(str, shiftFactor) {
     return newWord;
 }
 
-export { capitalise, reverseString, calc, caesarCipher }
+function analyseArray(arr) {
+    const length = arr.length;
+    const sum = arr.reduce((acc, number) => {
+        return acc += number;
+    }, 0) 
+    const average = Math.round((100 * (sum / length)))/100;
+    const min = Math.round(100 * Math.min(...arr))/100;
+    const max = Math.round(100 * Math.max(...arr))/100;
+
+    const object = {
+        average: average,
+        min: min,
+        max: max,
+        length: length
+     };
+     return object;
+}
+
+export { capitalise, reverseString, calc, caesarCipher, analyseArray }
